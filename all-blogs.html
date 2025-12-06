@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="All CTF writeups and security blog posts">
+    <title>All Blogs - CTF Writeups</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1><span class="logo-accent">BRATT</span></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="all-blogs.html" class="nav-link active">All Blogs</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- All Blogs Section -->
+    <section class="all-blogs-section">
+        <div class="container" style="padding-top: 120px;">
+            <h1 class="section-title">All <span class="gradient-text">Writeups</span></h1>
+            <p class="about-text" style="margin-bottom: 2rem;">Browse through all my CTF writeups and security
+                challenges</p>
+
+            <!-- Filter/Search Bar -->
+            <div class="blog-filters">
+                <input type="text" id="search-input" class="search-input" placeholder="Search blogs...">
+                <select id="tag-filter" class="tag-filter">
+                    <option value="all">All Tags</option>
+                    <option value="HTB">HackTheBox</option>
+                    <option value="PicoCTF">PicoCTF</option>
+                    <option value="TryHackMe">TryHackMe</option>
+                    <option value="PWN">PWN</option>
+                    <option value="Web">Web</option>
+                    <option value="Linux">Linux</option>
+                </select>
+            </div>
+
+            <div id="all-blogs-grid" class="blog-grid">
+                <!-- All blog posts will be dynamically loaded here -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading all writeups...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CTF Writeups. Happy Hacking!</p>
+        </div>
+    </footer>
+
+    <!-- Blog Post Modal -->
+    <div id="post-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+            <article id="post-content" class="post-article">
+                <!-- Post content will be loaded here -->
+            </article>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="all-blogs.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CTF writeups, security challenges, and hacking tutorials">
+    <title>CTF Writeups - Security Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <h1><span class="logo-accent">BRATT</span></h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="#writeups" class="nav-link">Blogs</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Welcome to <span class="gradient-text">CTF Writeups</span></h2>
+            <p class="hero-subtitle">Capture The Flag writeups, security challenges, and penetration testing notes</p>
+            <a href="#writeups" class="cta-button">
+                <span>Explore Writeups</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Writeups Section -->
+    <section id="writeups" class="blog-section">
+        <div class="container">
+            <h2 class="section-title">Latest <span class="gradient-text">Writeups</span></h2>
+            <div id="blog-grid" class="blog-grid">
+                <!-- Blog posts will be dynamically loaded here -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Loading writeups...</p>
+                </div>
+            </div>
+            <div class="explore-more-container">
+                <a href="all-blogs.html" class="explore-more-btn">
+                    <span>View All Blogs</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+                <p class="about-text">
+                    I am a cybersecurity enthusiast with a passion for learning and sharing knowledge.
+                    I enjoy participating in Capture The Flag (CTF) competitions and penetration testing challenges.
+                    This site documents my journey through various security competitions and challenges.
+                </p>
+
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer"
+                        class="social-icon" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer"
+                        class="social-icon" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer"
+                        class="social-icon" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </a>
+                    <a href="https://app.hackthebox.com/profile/yourid" target="_blank" rel="noopener noreferrer"
+                        class="social-icon" aria-label="HackTheBox">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M11.996 0a1.119 1.119 0 0 0-.057.002.9.9 0 0 0-.236.05.907.907 0 0 0-.165.079L1.936 5.675a.889.889 0 0 0-.444.77v11.111a.889.889 0 0 0 .444.77l9.602 5.544a.889.889 0 0 0 .888 0l9.602-5.544a.889.889 0 0 0 .444-.77V6.445a.889.889 0 0 0-.444-.77L12.426.131a.907.907 0 0 0-.165-.079.9.9 0 0 0-.236-.05A1.119 1.119 0 0 0 11.996 0zm-.01 2.41L20.247 7.5l-3.069 1.772-5.192-3zm-1.983.393v6.286L4.811 6.916zm.5 7.58l5.192 3-5.192 2.997zm1.483.393l5.192-3v6.286zm-8.176 1.106l3.069 1.772v3.544zm15.583 0l-3.069 1.772v3.544z" />
+                        </svg>
+                    </a>
+                    <a href="https://tryhackme.com/p/yourusername" target="_blank" rel="noopener noreferrer"
+                        class="social-icon" aria-label="TryHackMe">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M10.705 0C7.54 0 4.902 2.285 4.349 5.291a4.525 4.525 0 0 0-4.107 4.5 4.525 4.525 0 0 0 4.52 4.52h6.761a.625.625 0 1 0 0-1.25H4.761a3.273 3.273 0 0 1-3.27-3.27 3.273 3.273 0 0 1 3.27-3.27c.07 0 .14.006.209.014.197-2.787 2.489-4.785 5.24-4.785 2.906 0 5.291 2.385 5.291 5.29a.625.625 0 1 0 1.25 0c0-3.614-2.927-6.54-6.541-6.54zm7.917 6.837a.626.626 0 0 0-.441.183l-3.834 3.834-2.188-2.188a.625.625 0 1 0-.884.884l2.63 2.63a.625.625 0 0 0 .884 0l4.276-4.276a.625.625 0 0 0-.443-1.067zM4.349 16.51a.625.625 0 0 0-.625.625v5.833c0 .345.28.625.625.625h5.833a.625.625 0 1 0 0-1.25H4.974v-5.208a.625.625 0 0 0-.625-.625zm15.208 0a.625.625 0 0 0-.625.625v5.208h-5.208a.625.625 0 1 0 0 1.25h5.833c.345 0 .625-.28.625-.625v-5.833a.625.625 0 0 0-.625-.625z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="post-count">0</div>
+                        <div class="stat-label">Writeups</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">CTF</div>
+                        <div class="stat-label">Challenges</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">PWN</div>
+                        <div class="stat-label">Exploits</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 CTF Writeups. Happy Hacking!</p>
+        </div>
+    </footer>
+
+    <!-- Blog Post Modal -->
+    <div id="post-modal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+            <article id="post-content" class="post-article">
+                <!-- Post content will be loaded here -->
+            </article>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
