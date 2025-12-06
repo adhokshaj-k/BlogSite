@@ -6,20 +6,6 @@
       "date": "2025-12-02",
       "tags": ["welcome", "introduction"],
       "excerpt": "Welcome to my new blog! This is the beginning of an exciting journey into sharing thoughts, ideas, and experiences."
-    },
-    {
-      "title": "The Art of Modern Web Design",
-      "file": "modern-web-design.md",
-      "date": "2025-12-01",
-      "tags": ["design", "web", "css"],
-      "excerpt": "Exploring the principles and techniques that make modern websites beautiful, functional, and engaging."
-    },
-    {
-      "title": "Building with Markdown",
-      "file": "building-with-markdown.md",
-      "date": "2025-11-30",
-      "tags": ["markdown", "tutorial", "blogging"],
-      "excerpt": "Learn how to leverage Markdown for creating beautiful, maintainable blog content with ease."
     }
   ]
 }
