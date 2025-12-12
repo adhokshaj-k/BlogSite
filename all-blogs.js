@@ -1,25 +1,11 @@
 // Blog posts data - Same as main script
 const BLOG_POSTS = [
     {
-        title: "HackTheBox - Lame Walkthrough",
-        file: "htb-lame.md",
+        title: "FIRST BLOG",
+        file: "1.md",
         date: "2025-12-02",
         tags: ["HTB", "Linux", "Easy"],
         excerpt: "Complete walkthrough of the Lame machine from HackTheBox. Exploiting Samba 3.0.20 for initial access and privilege escalation."
-    },
-    {
-        title: "PicoCTF 2024 - Buffer Overflow Challenge",
-        file: "picoctf-buffer-overflow.md",
-        date: "2025-12-02",
-        tags: ["PicoCTF", "PWN", "Binary Exploitation"],
-        excerpt: "Exploiting a classic buffer overflow vulnerability to gain shell access. Detailed analysis of stack layout and exploit development."
-    },
-    {
-        title: "TryHackMe - Basic Pentesting Room",
-        file: "thm-basic-pentesting.md",
-        date: "2025-11-30",
-        tags: ["TryHackMe", "Web", "Enumeration"],
-        excerpt: "Step-by-step walkthrough of the Basic Pentesting room covering enumeration, exploitation, and privilege escalation techniques."
     }
 ];
 
