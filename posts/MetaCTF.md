@@ -89,7 +89,7 @@ Base64 decoded string :: MetaCTF{c0ld_h4nds_w4rm_h34rts_st0p_pu771ng_s3nsi7ive_1
 **Objective:** Find the place where the picture was taken
 
 ### Image
-<img src="images/GiftHunt.jpg">
+<img src="images/GiftHunt.jpg" width="500" height="300">
 
 ### Image Analysis
 
@@ -118,3 +118,4 @@ After checking several AGIO locations, I found a **perfect match** at the **Mark
 ```
 MetaCTF{nikke_colton_plaza}
 ```
+
