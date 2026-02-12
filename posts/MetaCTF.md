@@ -89,4 +89,4 @@ Base64 decoded string :: MetaCTF{c0ld_h4nds_w4rm_h34rts_st0p_pu771ng_s3nsi7ive_1
 **Objective:** Find the pace where the picture was taken
 
 ### Image
-<img src="posts/images/snowfallCTFoutput.png">
+<img src="images/snowfallCTFoutput.png">

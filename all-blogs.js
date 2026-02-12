@@ -201,7 +201,26 @@ async function openPost(post) {
         const markdown = await response.text();
 
         // Parse markdown to HTML using marked.js
-        const html = marked.parse(markdown);
+        let html = marked.parse(markdown);
+
+        // Fix relative image paths - convert to absolute paths from root
+        // This ensures images load correctly when the markdown is rendered in the modal
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = html;
+
+        // Find all img tags and fix their src attributes
+        const images = tempDiv.querySelectorAll('img');
+        images.forEach(img => {
+            const src = img.getAttribute('src');
+            // If the path doesn't start with http/https and doesn't start with posts/
+            // (meaning it's a relative path from within the posts directory)
+            if (src && !src.startsWith('http') && !src.startsWith('posts/')) {
+                // Prepend the posts directory path
+                img.setAttribute('src', `${BLOG_CONFIG.postsDirectory}${src}`);
+            }
+        });
+
+        html = tempDiv.innerHTML;
 
         // Render post
         const tags = post.tags ? post.tags.map(tag =>
