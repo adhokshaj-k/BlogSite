@@ -1,11 +1,18 @@
 // Blog posts data - Same as main script
 const BLOG_POSTS = [
     {
-        title: "FIRST BLOG",
-        file: "1.md",
-        date: "2025-12-02",
-        tags: ["HTB", "Linux", "Easy"],
-        excerpt: "Complete walkthrough of the Lame machine from HackTheBox. Exploiting Samba 3.0.20 for initial access and privilege escalation."
+        "title": "How I built my First Home lab",
+        "file": "1.md",
+        "date": "2025-12-02",
+        "tags": ["Home Lab", "Cybersecurity", "Virtualization", "Setup"],
+        "excerpt": "A comprehensive guide on setting up a safe and effective cybersecurity home lab for penetration testing and malware analysis."
+    },
+    {
+        "title": "MetaCTF Challenge Writeup",
+        "file": "MetaCTF.md",
+        "date": "2025-12-21",
+        "tags": ["CTF", "writeup", "MetaCTF"],
+        "excerpt": "A detailed writeup of the challenges I solved during the MetaCTF competition, including strategies and solutions."
     }
 ];
 

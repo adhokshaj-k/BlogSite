@@ -1,11 +1,26 @@
 {
   "posts": [
     {
-      "title": "Welcome to My Blog",
-      "file": "welcome.md",
+      "title": "How I built My Home lab",
+      "file": "1.md",
       "date": "2025-12-02",
-      "tags": ["welcome", "introduction"],
-      "excerpt": "Welcome to my new blog! This is the beginning of an exciting journey into sharing thoughts, ideas, and experiences."
+      "tags": [
+        "HomeLab",
+        "Virtualization",
+        "Cybersecurity"
+      ],
+      "excerpt": "How I built my First Home lab"
+    },
+    {
+      "title": "MetaCTF Challenge Writeup",
+      "file": "MetaCTF.md",
+      "date": "2025-12-21",
+      "tags": [
+        "CTF",
+        "writeup",
+        "MetaCTF"
+      ],
+      "excerpt": "A detailed writeup of the challenges I solved during the MetaCTF competition, including strategies and solutions."
     }
   ]
 }
