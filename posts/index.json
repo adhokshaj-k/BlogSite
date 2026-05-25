@@ -21,6 +21,17 @@
         "MetaCTF"
       ],
       "excerpt": "A detailed writeup of the challenges I solved during the MetaCTF competition, including strategies and solutions."
+    },
+    {
+      "title": "Kobold.htb Writeup",
+      "file": "Kobold.md",
+      "date": "2026-05-25",
+      "tags": [
+        "CTF",
+        "writeup",
+        "Kobold.htb"
+      ],
+      "excerpt": "A detailed writeup of the challenges I solved during the Kobold.htb competition, including strategies and solutions."
     }
   ]
 }

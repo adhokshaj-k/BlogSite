@@ -5,7 +5,7 @@ const BLOG_POSTS = [
         "file": "1.md",
         "date": "2025-12-02",
         "tags": ["Home Lab", "Cybersecurity", "Virtualization", "Setup"],
-        "excerpt": "A comprehensive guide on setting up a safe and effective cybersecurity home lab for penetration testing and malware analysis."
+        "excerpt": "Setting up the Home Lab"
     },
     {
         "title": "MetaCTF Challenge Writeup",
@@ -13,6 +13,13 @@ const BLOG_POSTS = [
         "date": "2025-12-21",
         "tags": ["CTF", "writeup", "MetaCTF"],
         "excerpt": "A detailed writeup of the challenges I solved during the MetaCTF competition, including strategies and solutions."
+    },
+    {
+        "title": "Kobold.htb Writeup",
+        "file": "Kobold.md",
+        "date": "2026-05-25",
+        "tags": ["CTF", "writeup", "Kobold.htb"],
+        "excerpt": "A detailed writeup of the challenges I solved during the Kobold.htb competition, including strategies and solutions."
     }
 ];
 
