@@ -2,6 +2,7 @@ export const siteConfig = {
   name: "Adhokshaj Kulkarni",
   handle: "Adhokshaj",
   title: "Adhokshaj Kulkarni",
+  url: "https://your-domain.com",
   // description:
   //   "Cybersecurity, technology, and things I learn while breaking and building stuff.",
   tagline:
