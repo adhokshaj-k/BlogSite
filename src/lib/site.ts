@@ -3,8 +3,8 @@ export const siteConfig = {
   handle: "Adhokshaj",
   title: "Adhokshaj Kulkarni",
   url: "https://your-domain.com",
-  // description:
-  //   "Cybersecurity, technology, and things I learn while breaking and building stuff.",
+  description:
+    "Cybersecurity, technology, and things I learn while breaking and building stuff.",
   tagline:
     "MCA student & security researcher. Focused on offensive security, web vulnerabilities, Linux internals, and tooling.",
   about:
